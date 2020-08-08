@@ -6,3 +6,8 @@ end
 function shellswitch
   chsh -s (brew --prefix)/bin/$argv
 end
+
+# Update all
+function ud
+  sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+end

@@ -1,0 +1,4 @@
+# Local variables for fish
+
+set -xg GITHUB_USER 'github_username'
+set -xg GITHUB_TOKEN 'token'
