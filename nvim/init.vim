@@ -62,6 +62,9 @@ set list listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+
 " UTF encoding
 set encoding=utf-8
 
+" Set gui font
+set guifont=Operator\ Mono\ Lig\ NF
+
 " Use system clipboard
 " http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
 set clipboard+=unnamed
@@ -222,10 +225,10 @@ vmap <leader>gb :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 
 " Adjust split size incrementally
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Left> :vertical resize +2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
 
 " zoom back out
 nnoremap <leader>= :wincmd =<cr>
@@ -339,7 +342,7 @@ let g:far#file_mask_favorites = ['%', '**/*.*', '**/*.html', '**/*.haml', '**/*.
 
 " NERDTree
 nmap <silent> <F3> :NERDTreeToggle<CR>
-map <leader>\ :NERDTreeToggle<CR>
+map <leader>' :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.png$', '\.jpg$', '\.gif$', '\.mp3$', '\.ogg$', '\.mp4$',
       \ '\.avi$','.webm$','.mkv$','\.pdf$', '\.zip$', '\.tar.gz$',
@@ -362,7 +365,7 @@ let g:NERDTreeIndicatorMapCustom = {
       \ }
 
 " Vim DevIcons
-exe 'source' stdpath('config') . '/extras/devicons.vim'
+" exe 'source' stdpath('config') . '/extras/devicons.vim'
 
 " indentLine
 let g:indentLine_char = '▏'

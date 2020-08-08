@@ -70,8 +70,8 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml']      = s:config
 
 
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols                         = {} " needed
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.html\.erb$'        = s:haml
-]let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.js\.erb$']        = s:js
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.html\.erb$']       = s:haml
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.js\.erb$']         = s:js
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.scss\.erb$']       = s:sass
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Brewfile$']            = s:ruby
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Gemfile$']             = s:ruby
