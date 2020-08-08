@@ -27,7 +27,7 @@ if not functions -q omf
 end
 
 if status is-interactive
-  #  cd $HOME
+  cd $HOME
 
   # Abbreviations
   source $XDG_CONFIG_HOME/fish/abbr.fish
