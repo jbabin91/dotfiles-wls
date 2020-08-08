@@ -187,17 +187,16 @@ augroup textobj_quote
   autocmd!
   autocmd FileType markdown call textobj#quote#init()
   autocmd FileType textile call textobj#quote#init()
-  autocmd FileType text call
-  textobj#quote#init({'educate': 0})
+  autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
+
 " }}}
 
 " Mappings {{{
 let mapleader = "\<Space>"
 
 " Misc
-map <leader>r :source
-$XDG_CONFIG_HOME/nvim/init.vim<CR>
+map <leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>x :x<CR>
@@ -245,25 +244,12 @@ if !filereadable(autoload_plug_path)
         \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
   autocmd VimEnter * PlugInstall --sync | exe 'source' stdpath('config') . '/init.vim'
 endif
-
 unlet autoload_plug_path
 
 call plug#begin(stdpath('data') . '/plugged')
 
 " General
 Plug 'godlygeek/tabular'                " Vim script for text filtering and alignment           | https://github.com/godlygeek/tabular
-Plug 'tomtom/tcomment_vim'              " An extensible & universal comment vim-plugin          | https://github.com/tomtom/tcomment_vim
-Plug 'vim-scripts/BufOnly.vim'          " Delete all the buffers except current/named buffer    | https://github.com/vim-scripts/BufOnly.vim
-Plug 'jlanzarotta/bufexplorer'          " Open/close/navigate vim's buffers                     | https://github.com/jlanzarotta/bufexplorer
-Plug 'majutsushi/tagbar'                " A class outline viewer for vim                        | https://github.com/majutsushi/tagbar
-Plug 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for                    | https://github.com/ntpeters/vim-better-whitespace
-Plug 'machakann/vim-highlightedyank'    " Make the yanked region apparent!                      | https://github.com/machakann/vim-highlightedyank
-Plug 'diepm/vim-rest-console'           " A REST console for Vim.                               | https://github.com/diepm/vim-rest-console
-Plug 'rhysd/git-messenger.vim'          " Reveal the commit messages under the cursor           | https://github.com/rhysd/git-messenger.vim
-Plug 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim   | https://github.com/terryma/vim-multiple-cursors
-Plug 'airblade/vim-gitgutter'           " A Vim plugin which shows a git diff in the gutter     | https://github.com/airblade/vim-gitgutter
-Plug 'reedes/vim-textobj-quote'         " Use ‘curly’ quote characters in Vim                   | https://github.com/reedes/vim-textobj-quote
-Plug 'norcalli/nvim-colorizer.lua'      " The fastest Neovim colorizer.                         | https://github.com/norcalli/nvim-colorizer.luaPlug 'godlygeek/tabular'                " Vim script for text filtering and alignment           | https://github.com/godlygeek/tabular
 Plug 'tomtom/tcomment_vim'              " An extensible & universal comment vim-plugin          | https://github.com/tomtom/tcomment_vim
 Plug 'vim-scripts/BufOnly.vim'          " Delete all the buffers except current/named buffer    | https://github.com/vim-scripts/BufOnly.vim
 Plug 'jlanzarotta/bufexplorer'          " Open/close/navigate vim's buffers                     | https://github.com/jlanzarotta/bufexplorer
@@ -285,7 +271,7 @@ Plug 'mattn/emmet-vim'                                " emmet for vim           
 Plug 'joshukraine/vscode-es7-javascript-react-snippets',
       \ { 'do': 'yarn install --frozen-lockfile && yarn compile' } " React VSCode snippets      | https://github.com/joshukraine/vscode-es7-javascript-react-snippets
 
-" Ruby Specific
+" Ruby-specific
 Plug 'vim-ruby/vim-ruby'                " Vim/Ruby Configuration Files                          | https://github.com/vim-ruby/vim-ruby
 Plug 'kana/vim-textobj-user'            " Create your own text objects                          | https://github.com/kana/vim-textobj-user
 Plug 'nelstrom/vim-textobj-rubyblock'   " A custom text object for selecting ruby blocks        | https://github.com/nelstrom/vim-textobj-rubyblock
@@ -313,7 +299,7 @@ Plug 'joshukraine/oceanic-next',
       \ {'branch': 'js/color-tweaks'}   " Oceanic Next theme for neovim                         | https://github.com/joshukraine/oceanic-next
 Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline    | https://github.com/jacoborus/tender.vim
 Plug 'morhetz/gruvbox'                  " Retro groove color scheme for Vim                     | https://github.com/morhetz/gruvbox
-Plug 'joshukraine/vim-monokai-tasty'    " My fork of patstockwell/vim-monokai-tasty             | https://github.com/joshukraine/vim-monokai-tasty
+Plug 'joshukraine/vim-monokai-tasty',   " My fork of patstockwell/vim-monokai-tasty             | https://github.com/joshukraine/vim-monokai-tasty
 
 " Syntax Highlighting
 Plug 'hail2u/vim-css3-syntax'           " CSS3 syntax                                           | https://github.com/hail2u/vim-css3-syntax
@@ -446,16 +432,16 @@ nmap <leader>opr :VtrOpenRunner {'orientation': 'h', 'percentage': 40, 'cmd': 'p
 " nnoremap <leader>cr :VtrClearRunner<cr>
 " nnoremap <leader>fc :VtrFlushCommand<cr>
 " nnoremap <leader>sf :VtrSendFile<cr>
- 
+
 " FZF
 map <leader>b :Buffers<CR>
 map <leader>t :Files<CR>
 map <leader>y :Rg<CR>
 
 command! -bang -nargs=* Rg
-       \ call fzf#vim#grep(
-       \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-       \   fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+      \   fzf#vim#with_preview(), <bang>0)
 
 " Custom rails.vim commands
 " command! Rroutes :e config/routes.rb
@@ -483,7 +469,6 @@ let g:user_emmet_leader_key=','
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
 
 " Vim REST Console (VRC)
 let g:vrc_curl_opts = {
@@ -522,7 +507,6 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-
 " TIP: <C-w>p will close the preview window.
 
 " Format code on <CR>. (e.g, indent after open braces, pressing enter)
@@ -550,7 +534,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -638,4 +621,3 @@ endif
 " }}}
 
 " vim: fdm=marker fen
-

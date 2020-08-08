@@ -56,19 +56,19 @@
     ~/.config/nvim/lightline.vim: nvim/lightline.vim
     ~/.config/nvim/statusline.vim: nvim/statusline.vim
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
-    ~/.config/nvim/after/plugin/*.vim:
+    ~/.config/nvim/after/plugin/:
       path: nvim/after/plugin/*.vim
       glob: true
-    ~/.config/nvim/colorschemes/*.vim:
+    ~/.config/nvim/colorschemes/:
       path: nvim/colorschemes/*.vim
       glob: true
-    ~/.config/nvim/extras/*.vim:
+    ~/.config/nvim/extras/:
       path: nvim/extras/*.vim
       glob: true
-    ~/.config/nvim/ftplugin/*.vim:
+    ~/.config/nvim/ftplugin/:
       path: nvim/ftplugin/*.vim
       glob: true
-    ~/.config/nvim/spell/*:
+    ~/.config/nvim/spell/:
       path: nvim/spell/*
       glob: true
     
@@ -79,6 +79,7 @@
     
     # Tmux
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf.custom: tmux/tmux.conf.custom
 
 - shell:
     - command: ./asdf/bootstrap/deb.sh
