@@ -40,6 +40,9 @@
       path: fish/completions/*.fish
       glob: true
 
+    # Hush login
+    ~/.hushlogin: .hushlogin
+
     # Git config
     ~/.config/git/config: git/.gitconfig
     ~/.config/git/ignore: git/.gitignore_global
