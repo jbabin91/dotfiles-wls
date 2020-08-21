@@ -74,12 +74,12 @@
     ~/.config/nvim/spell/:
       path: nvim/spell/*
       glob: true
-    
+
     # Ranger
     ~/.config/ranger/*:
       path: ranger/*
       glob: true
-    
+
     # Tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.conf.custom: tmux/tmux.conf.custom
