@@ -89,3 +89,4 @@
       stderr: true
     - command: ./nvim/bootstrap/deb.sh
       stderr: true
+    - [git submodule update --init --recursive, Installing submodules]
