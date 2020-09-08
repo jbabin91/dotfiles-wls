@@ -32,9 +32,6 @@ if status is-interactive
   # Abbreviations
   source $XDG_CONFIG_HOME/fish/abbr.fish
 
-  # Functions
-  source $XDG_CONFIG_HOME/fish/functions.fish
-
   # Starship Theme
   starship init fish | source
 
