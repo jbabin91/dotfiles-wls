@@ -1,16 +1,7 @@
 - clean:
     - '~'
-    - '~/.config/fish'
-    - '~/.config/fish/completions'
-    - '~/.config/fish/conf.d'
-    - '~/.config/fish/functions'
     - '~/.config/git'
-    - '~/.config/nvim'
-    - '~/.config/nvim/after'
-    - '~/.config/nvim/colorschemes'
-    - '~/.config/nvim/extras'
-    - '~/.config/nvim/ftplugin'
-    - '~/.config/nvim/spell'
+    - '~/bin'
 
 - defaults:
     link:
@@ -19,25 +10,8 @@
       relink: true
 
 - link:
-    # asdf
-    ~/.tool-version: asdf/.tool-versions
-
-    # EditorConfig
-    ~/.editorconfig: .editorconfig
-
-    # Fish shell config files
-    ~/.config/fish/config.fish: fish/config.fish
-    ~/.config/fish/fishfile: fish/fishfile
-    ~/.config/fish/abbr.fish: fish/abbr.fish
-    ~/.config/fish/conf.d/*.fish:
-      path: fish/conf.d/*.fish
-      glob: true
-    ~/.config/fish/functions:
-      path: fish/functions/*.fish
-      glob: true
-    ~/.config/fish/completions:
-      path: fish/completions/*.fish
-      glob: true
+    # Bin
+    ~/bin/antigen.zsh: bin/antigen.zsh
 
     # Hush login
     ~/.hushlogin: .hushlogin
@@ -47,45 +21,8 @@
     ~/.config/git/ignore: git/.gitignore_global
     ~/.config/git/.gitconfig-personal: git/.gitconfig-personal
 
-    # Local configs
-    ~/.config/fish/config.fish.local: local/config.fish.local
-
-    # Machine configs
-    ~/.config/starship.toml: machines/jacebabin/starship.toml
-
-    # nvim
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/lightline.vim: nvim/lightline.vim
-    ~/.config/nvim/statusline.vim: nvim/statusline.vim
-    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
-    ~/.config/nvim/after/plugin/:
-      path: nvim/after/plugin/*.vim
-      glob: true
-    ~/.config/nvim/colorschemes/:
-      path: nvim/colorschemes/*.vim
-      glob: true
-    ~/.config/nvim/extras/:
-      path: nvim/extras/*.vim
-      glob: true
-    ~/.config/nvim/ftplugin/:
-      path: nvim/ftplugin/*.vim
-      glob: true
-    ~/.config/nvim/spell/:
-      path: nvim/spell/*
-      glob: true
-
-    # Ranger
-    ~/.config/ranger/*:
-      path: ranger/*
-      glob: true
-
-    # Tmux
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux.conf.custom: tmux/tmux.conf.custom
+    # OHMYZSH
+    ~/.zshrc: zsh/.zshrc
 
 - shell:
-    - command: ./asdf/bootstrap/deb.sh
-      stderr: true
-    - command: ./nvim/bootstrap/deb.sh
-      stderr: true
     - [git submodule update --init --recursive, Installing submodules]
