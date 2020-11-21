@@ -12,7 +12,6 @@ antigen bundle command-not-found
 antigen bundle z
 antigen bundle zsh_reload
 antigen bundle mafredri/zsh-async
-antigen bundle Kallahan23/zsh-colorls
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-completions
