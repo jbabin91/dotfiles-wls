@@ -24,6 +24,11 @@ antigen theme denysdovhan/spaceship-prompt
 # Tell Antigen that you're done.
 antigen apply
 
+plugins=(asdf)
+
+# User configuration
+source $HOME/.shell_env
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

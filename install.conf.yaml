@@ -24,5 +24,8 @@
     # OHMYZSH
     ~/.zshrc: zsh/.zshrc
 
+    # shell_env
+    ~/.shell_env: zsh/.shell_env
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
