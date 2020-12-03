@@ -29,6 +29,9 @@ plugins=(asdf)
 # User configuration
 source $HOME/.shell_env
 
+# asdf
+. $HOME/.asdf/asdf.sh
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
