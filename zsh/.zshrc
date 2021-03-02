@@ -18,9 +18,6 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme denysdovhan/spaceship-prompt
-
 # Tell Antigen that you're done.
 antigen apply
 
@@ -36,3 +33,8 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/dist_linux:$PATH"
+
+# Apply theme
+eval "$(starship init zsh)"

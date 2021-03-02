@@ -1,41 +1,37 @@
 - clean:
-    - '~/.bin'
-    - '~/.config/git'
-    - '~/.zshrc'
-    - '~/.shell_env'
+      - "~/.bin"
+      - "~/.config/git"
+      - "~/.zshrc"
+      - "~/.shell_env"
 
 - defaults:
-    link:
-      create: true
-      force: true
-      relink: true
+      link:
+          create: true
+          force: true
+          relink: true
 
 - link:
-    # Bin
-    ~/.bin/antigen.zsh: zsh/antigen.zsh
+      # Bin
+      ~/.bin/antigen.zsh: zsh/antigen.zsh
 
-    # Hush login
-    ~/.hushlogin: .hushlogin
+      # Hush login
+      ~/.hushlogin: .hushlogin
 
-    # Git config
-    ~/.config/git/config: git/.gitconfig
-    ~/.config/git/ignore: git/.gitignore_global
-    ~/.config/git/.gitconfig-personal: git/.gitconfig-personal
+      # Git config
+      ~/.config/git/config: git/.gitconfig
+      ~/.config/git/ignore: git/.gitignore_global
+      ~/.config/git/.gitconfig-personal: git/.gitconfig-personal
 
-    # OHMYZSH
-    ~/.zshrc: zsh/.zshrc
+      # OHMYZSH
+      ~/.zshrc: zsh/.zshrc
 
-    # shell_env
-    ~/.shell_env: zsh/.shell_env
+      # shell_env
+      ~/.shell_env: zsh/.shell_env
 
 - shell:
-    - [sudo apt install zsh, Install zsh]
-    - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
-    - [git submodule update --init --recursive, Installing submodules]
-    - [sudo apt install rbenv, Installing rbenv]
-    - [git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build, Update rbenv with latest builds]
-    - [rbenv install 2.7.2, Installing version 2.7.2 of Ruby]
-    - [rbenv global 2.7.2, Setting global version of Ruby]
-    - [gem install colorls, Installing colorls]
-    - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh, Installing nvm]
-    - [nvm install --lts, Installing current lts version of Node]
+      - [sudo apt install zsh, Install zsh]
+      - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
+      - [git submodule update --init --recursive, Installing submodules]
+      - [curl -fsSL https://starship.rs/install.sh | bash, Installing starship shell prompt]
+      - [git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build, Update rbenv with latest builds]
+      - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh, Installing nvm]
