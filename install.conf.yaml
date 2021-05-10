@@ -32,6 +32,3 @@
       - [sudo apt install zsh, Install zsh]
       - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
       - [git submodule update --init --recursive, Installing submodules]
-      - [curl -fsSL https://starship.rs/install.sh | bash, Installing starship shell prompt]
-      - [git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build, Update rbenv with latest builds]
-      - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh, Installing nvm]

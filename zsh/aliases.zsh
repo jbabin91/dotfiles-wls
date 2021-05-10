@@ -4,6 +4,9 @@
 #
 # This file is used as a part of `.shell_env`
 
+# Update, Upgrade, and Cleanup
+alias ud='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
 # General UNIX
 alias c='clear'
 alias cp='cp -iv'

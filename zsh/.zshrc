@@ -36,5 +36,11 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/dist_linux:$PATH"
 
+export PATH="$HOME/.doom.d/.emacs.d/bin:$PATH"
+
+export PATH="$HOME/ngrok:$PATH"
+
+unsetopt beep
+
 # Apply theme
 eval "$(starship init zsh)"

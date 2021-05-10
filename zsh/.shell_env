@@ -20,7 +20,7 @@ config_files=($DOTFILES/*/*.zsh)
 # === Shell parts ===
 
 # source "$HOME/.shell/.exports"
-# source "$HOME/.shell/.aliases"
+source "$HOME/.shell/.aliases"
 # source "$HOME/.shell/.functions"
 # source "$HOME/.shell/.external"
 
