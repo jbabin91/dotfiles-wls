@@ -1,34 +1,33 @@
 - clean:
-      - "~/.bin"
-      - "~/.config/git"
-      - "~/.zshrc"
-      - "~/.shell_env"
+    - '~/.bin'
+    - '~/.config/git'
+    - '~/.zshrc'
+    - '~/.shell_env'
 
 - defaults:
-      link:
-          create: true
-          force: true
-          relink: true
+    link:
+      create: true
+      force: true
+      relink: true
 
 - link:
-      # Bin
-      ~/.bin/antigen.zsh: zsh/antigen.zsh
-
-      # Hush login
-      ~/.hushlogin: .hushlogin
-
-      # Git config
-      ~/.config/git/config: git/.gitconfig
-      ~/.config/git/ignore: git/.gitignore_global
-      ~/.config/git/.gitconfig-personal: git/.gitconfig-personal
-
-      # OHMYZSH
-      ~/.zshrc: zsh/.zshrc
-
-      # shell_env
-      ~/.shell_env: zsh/.shell_env
+    # Bin
+    ~/.bin/antigen.zsh: zsh/antigen.zsh
+    # Hush login
+    ~/.hushlogin: .hushlogin
+    # Git config
+    ~/.config/git/config: git/.gitconfig
+    ~/.config/git/ignore: git/.gitignore_global
+    ~/.config/git/.gitconfig-personal: git/.gitconfig-personal
+    # OHMYZSH
+    ~/.zshrc: zsh/.zshrc
+    # shell_env
+    ~/.shell_env: zsh/.shell_env
+    # Tmux
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf.local: tmux/tmux.conf.local
 
 - shell:
-      - [sudo apt install zsh, Install zsh]
-      - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
-      - [git submodule update --init --recursive, Installing submodules]
+    - [sudo apt install zsh, Install zsh]
+    - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
+    - [git submodule update --init --recursive, Installing submodules]
